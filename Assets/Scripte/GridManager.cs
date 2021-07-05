@@ -111,8 +111,6 @@ public class GridManager : MonoBehaviour
         Instantiate(_mushroom, _mushroom.transform.position, Quaternion.identity);
         MushroomGridLocate.Insert(num, MushroomGridPosition);
 
-        //Debug.Log(MushroomGridPosition);
-
     }
 
     public string CentepedeMoved(Vector2Int CentepedeGridPosition, string command , string way)
@@ -134,7 +132,7 @@ public class GridManager : MonoBehaviour
                 }
                 else if (command == "left" && CentepedeGridPosition == GridLockLocate[z] && CentepedeGridPosition.x > -1)
                 {
-                    if(CentepedeGridPosition.x >= 0 && way == "down")
+                    if(CentepedeGridPosition.x > -1 && way == "down")
                     {
                         temp = "down";
                         return temp;
@@ -152,7 +150,7 @@ public class GridManager : MonoBehaviour
                 }
                 else if (command == "down" && CentepedeGridPosition == GridLockLocate[z] && CentepedeGridPosition.y >= 0)
                 {
-                    if (CentepedeGridPosition.x - 1 >= 0)
+                    if (CentepedeGridPosition.x - 1 > -1)
                     {
                         temp = "left";
                         return temp;

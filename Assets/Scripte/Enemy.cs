@@ -8,7 +8,7 @@ public class Enemy : MonoBehaviour
     private Vector2Int gridPosition;
     private float gridMoveTimer;
     private float gridMoveTimerMax;
-    public int centepedeBodySize;
+    public int centepedeBodySize=15;
     private List<Vector2Int> centepedeMovePositionList;
     private string command;
     private string way;

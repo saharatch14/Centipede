@@ -23,7 +23,9 @@ public class Player : MonoBehaviour
 
     GridManager gridManager;
 
-    public bool recicer;
+    public GameManager gameManager;
+
+    private bool recicer;
 
     public void Setup(GridManager gridManager)
     {
@@ -31,11 +33,6 @@ public class Player : MonoBehaviour
     }
 
     // Start is called before the first frame update
-
-    void Awake()
-    {
-        //gridPosition = new Vector2Int(3, -4);
-    }
 
     void Start()
     {
@@ -52,30 +49,24 @@ public class Player : MonoBehaviour
     {
         Move();
         Attack();
-
-        //transform.position = new Vector3(gridPosition.x, gridPosition.y);
     }
 
     void Move()
     {
         if (Input.GetKeyDown(KeyCode.UpArrow) && !isMoving)
         {
-            //gridPosition.y += 1;
             StartCoroutine(MovePlayer(Vector3.up));
         }
         if (Input.GetKeyDown(KeyCode.DownArrow) && !isMoving)
         {
-            //gridPosition.y -= 1;
             StartCoroutine(MovePlayer(Vector3.down));
         }
         if (Input.GetKeyDown(KeyCode.RightArrow) && !isMoving)
         {
-            //gridPosition.x += 1;
             StartCoroutine(MovePlayer(Vector3.right));
         }
         if (Input.GetKeyDown(KeyCode.LeftArrow) && !isMoving)
         {
-            //gridPosition.x -= 1;
             StartCoroutine(MovePlayer(Vector3.left));
         }
     }
@@ -115,11 +106,8 @@ public class Player : MonoBehaviour
 
         recicer = gridManager.PlayerMoved(targetPosSent);
 
-        //Debug.Log(recicer);
-
         if (recicer == true)
         {
-            //transform.position = origPos;
                 isMoving = false;
         }
         else
@@ -140,9 +128,24 @@ public class Player : MonoBehaviour
                 isMoving = false;
             }
         }
-
-        //transform.position = targetPos;
-        //isMoving = false;
-
+    }
+	
+    void OnTriggerEnter2D(Collider2D target)
+    {
+        if (target.tag == "Enemy")
+        {
+            if(life > 0)
+            {
+                life -= 1;
+                float restartDealy = 1f;
+                Destroy(gameObject);
+                Invoke("Restart", restartDealy);
+            }
+            else
+            {
+                Destroy(gameObject);
+                gameManager.CompleteLevel();
+            }
+        }
     }
 }
