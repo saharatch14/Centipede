@@ -2,6 +2,7 @@
  game project exam
 
 Work Fine
+------------
 
 -Player movement
 
@@ -9,14 +10,18 @@ Work Fine
 
 -Mushrooms
 
-not work well
+
+Not work well
+------------
 
 -centipede movement not work correctly
 
 -life-count is decreased
 
 
-not Finish
+
+Not Finish
+------------
 
 -When player Attack centipede is divided
 
