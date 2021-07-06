@@ -5,32 +5,39 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    bool gameHasEnded = false;
-
     public float restartDealy = 1f;
 
     public GameObject completeLevelUI;
 
+    public GameObject enemy;
+
+    Player player;
+
+    void Start()
+    {
+        player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
+    }
+
+        void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Space) && player.life <= 0)
+        {
+            Invoke("Restart", restartDealy);
+        }
+        else if(Input.GetKeyDown(KeyCode.Space) && enemy.activeSelf == false)
+        {
+            Invoke("Restart", restartDealy);
+        }
+    }
+
     public void CompleteLevel()
     {
         completeLevelUI.SetActive(true);
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            Invoke("Restart",0f);
-        }
-        else
-        {
-
-        }
     }
 
     public void EndGame()
     {
-        if(gameHasEnded == false)
-        {
-            gameHasEnded = true;
-            Invoke("Restart", restartDealy);
-        }
+        Invoke("Restart", 0f);
     }
     void Restart()
     {

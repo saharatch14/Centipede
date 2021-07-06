@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+[System.Serializable]
 
 public class Player : MonoBehaviour
 {
@@ -13,17 +15,15 @@ public class Player : MonoBehaviour
 
     private bool isMoving;
     private Vector3 origPos, targetPos;
-    private Vector2Int origPosSent, targetPosSent;
+    private Vector2Int targetPosSent;
     private float timeToMove = 0.2f;
     public float attack_Timer = 0.35f;
     private float current_Attack_Timer;
     private bool canAttack;
     public float min_X, max_X, min_Y, max_Y;
-    public int life =3;
+    public int life = 3;
 
     GridManager gridManager;
-
-    public GameManager gameManager;
 
     private bool recicer;
 
@@ -36,6 +36,7 @@ public class Player : MonoBehaviour
 
     void Start()
     {
+        DontDestroyOnLoad(this.gameObject);
         gridManager = GameObject.FindGameObjectWithTag("option").GetComponent<GridManager>();
         current_Attack_Timer = attack_Timer;
         min_X = 0;
@@ -134,17 +135,16 @@ public class Player : MonoBehaviour
     {
         if (target.tag == "Enemy")
         {
-            if(life > 0)
+            life = life - 1;
+            if (life > 0)
             {
-                life -= 1;
-                float restartDealy = 1f;
-                Destroy(gameObject);
-                Invoke("Restart", restartDealy);
+                gameObject.SetActive(false);
+                FindObjectOfType<GameManager>().EndGame();
             }
             else
             {
                 Destroy(gameObject);
-                gameManager.CompleteLevel();
+                FindObjectOfType<GameManager>().CompleteLevel();
             }
         }
     }

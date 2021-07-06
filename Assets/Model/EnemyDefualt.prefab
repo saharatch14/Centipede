@@ -128,7 +128,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be4d8a7e7f89c334d81827727273ce56, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  centepedeBodySize: 15
+  centepedeBodySize: 5
   _body: {fileID: 3561957238271213651, guid: 37408fa13d5522542b4531a71ed467f6, type: 3}
 --- !u!50 &-7966157022419082156
 Rigidbody2D:

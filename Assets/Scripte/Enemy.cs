@@ -148,12 +148,10 @@ public class Enemy : MonoBehaviour
             }
 
             //Vector2Int newlocate = gridManager.CentepedeMoved(gridPosition,command);
-            //temptest = gridManager.CentepedeMovedawayfrommushroom(gridPosition);
             newlocate = gridManager.CentepedeMoved(gridPosition, command, way);
             newlocate = gridManager.CentepedeMovedawayfrommushroom(gridPosition);
-            Debug.Log(newlocate);
+            //Debug.Log(newlocate);
             transform.position = new Vector3(gridPosition.x, gridPosition.y);
-            //transform.position = new Vector3(newlocate.x, newlocate.y);
             transform.eulerAngles = new Vector3(0, 0, GetAngleFromVector(gridMoveDirection) - 90);
         }
     }
@@ -169,7 +167,8 @@ public class Enemy : MonoBehaviour
     {
         if (target.tag == "Bullet")
         {
-            Destroy(gameObject);
+            Destroy(this.gameObject);
+            FindObjectOfType<GameManager>().CompleteLevel();
         }
     }
 }

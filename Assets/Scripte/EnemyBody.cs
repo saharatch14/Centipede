@@ -15,4 +15,11 @@ public class EnemyBody : MonoBehaviour
     {
         
     }
+    void OnTriggerEnter2D(Collider2D target)
+    {
+        if (target.tag == "Bullet")
+        {
+            Destroy(gameObject);
+        }
+    }
 }

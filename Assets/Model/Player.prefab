@@ -89,7 +89,6 @@ MonoBehaviour:
   min_Y: 0
   max_Y: 0
   life: 3
-  recicer: 0
 --- !u!50 &-7880919330603928551
 Rigidbody2D:
   serializedVersion: 4

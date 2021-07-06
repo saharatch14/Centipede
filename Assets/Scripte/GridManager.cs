@@ -32,7 +32,6 @@ public class GridManager : MonoBehaviour
     private List<Vector2Int> GridLockLocate;
     private int count = 0;
     private string temp;
-    private string temp2;
     private Vector2Int leftlock  = new Vector2Int(1, 0);
     private Vector2Int rightlock = new Vector2Int(-1, 0);
 
@@ -187,6 +186,19 @@ public class GridManager : MonoBehaviour
                         temp = "right";
                         return temp;
                     }
+                }
+            }
+            else if(CentepedeGridPosition.x >= _width || CentepedeGridPosition.x < -1)
+            {
+                if(CentepedeGridPosition.x > _width)
+                {
+                    temp = "left";
+                    return temp;
+                }
+                else if(CentepedeGridPosition.x < -1)
+                {
+                    temp = "right";
+                    return temp;
                 }
             }
             else
