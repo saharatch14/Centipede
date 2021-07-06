@@ -27,5 +27,5 @@ Not Finish
 
 -When player is killed and has 0 lives it will show GameOver (when player have 0 live it will work)
 
--life-count is decreased not work
+-etc.
 
