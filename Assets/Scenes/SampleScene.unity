@@ -789,7 +789,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   restartDealy: 1
   completeLevelUI: {fileID: 1811739077}
-  enemy: {fileID: 7362346140299471590, guid: 32f19f8477bccaa46b847f3999e1ece1, type: 3}
+  enemy: {fileID: 4711105657210161705, guid: 32f19f8477bccaa46b847f3999e1ece1, type: 3}
 --- !u!4 &1907738492
 Transform:
   m_ObjectHideFlags: 0
