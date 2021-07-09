@@ -380,10 +380,10 @@ MonoBehaviour:
   _tilePrefab: {fileID: 6507367203206023156, guid: a1498a4ccbd7a5b48aa1f8be08923a0e, type: 3}
   _cam: {fileID: 519420032}
   _player: {fileID: 2869920118315320614, guid: 9c0b41c63fd4c974c9932614a22423f4, type: 3}
-  _enemy: {fileID: 7362346140299471590, guid: 32f19f8477bccaa46b847f3999e1ece1, type: 3}
+  _enemy: {fileID: 4711105657210161705, guid: 32f19f8477bccaa46b847f3999e1ece1, type: 3}
   _mushroom: {fileID: 6098109437810084687, guid: 86816e8312c0b1049a3131a973395665, type: 3}
   player: {fileID: 2107561727, guid: 9c0b41c63fd4c974c9932614a22423f4, type: 3}
-  enemy: {fileID: 3880099474253022491, guid: 32f19f8477bccaa46b847f3999e1ece1, type: 3}
+  enemy: {fileID: 5688245895825189313, guid: 32f19f8477bccaa46b847f3999e1ece1, type: 3}
 --- !u!4 &963823062
 Transform:
   m_ObjectHideFlags: 0
@@ -538,7 +538,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 2107561727, guid: 9c0b41c63fd4c974c9932614a22423f4, type: 3}
-  enemy: {fileID: 3880099474253022491, guid: 32f19f8477bccaa46b847f3999e1ece1, type: 3}
+  enemy: {fileID: 5688245895825189313, guid: 32f19f8477bccaa46b847f3999e1ece1, type: 3}
 --- !u!4 &1403114925
 Transform:
   m_ObjectHideFlags: 0
